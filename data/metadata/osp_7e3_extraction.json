@@ -1,0 +1,25 @@
+{
+  "source_path": "data/raw/osp/source_7E3.json",
+  "source_sha256": "8f6730c526790aeabf83706bfadc54a38b78ef0e950277cb873861def322a1f6",
+  "source_commit": "12f886989585472e26d5857364047ff2d68abbcd",
+  "profiles": 24,
+  "observations": 174,
+  "gut_observations": 13,
+  "zero_reported_sd": 96,
+  "organs": [
+    "Brain",
+    "Gut",
+    "Heart",
+    "Kidney",
+    "Liver",
+    "Lung",
+    "Muscle",
+    "Skin",
+    "Spleen",
+    "VenousBlood"
+  ],
+  "processed_path": "data/processed/osp_7e3_observations.csv",
+  "processed_sha256": "fa67859ece7857f9cdde29a3227b4cc6a7e397df3cc768dde2cb8b9d5262d7f6",
+  "eligible_for_independent_human_anti_TNF_validation": false,
+  "licence_note": "Source README states GPLv2 for model code; underlying observations require separate rights review"
+}

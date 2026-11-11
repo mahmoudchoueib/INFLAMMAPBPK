@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3836053/",
+    "local_path": "data/raw/chunk2/minimal_pbpk.html",
+    "bytes": 216377,
+    "sha256": "209dac123d84208a45979791190ca39c94ace5bae623233dc70d4453da69d105",
+    "retrieved_utc_date": "2026-11-10",
+    "note": "Equations 1-7 checked; full text accessible; reuse rights not assumed"
+  },
+  {
+    "url": "https://www.ema.europa.eu/en/documents/product-information/humira-epar-product-information_en.pdf",
+    "local_path": "data/raw/chunk2/humira_product_information.pdf",
+    "bytes": 1742903,
+    "sha256": "0118f9ea31f7b28ac156bc8449293407c25bc43421a73fa92a30fe90db390eca",
+    "retrieved_utc_date": "2026-11-10",
+    "note": "Sections 4.2 adult Crohn dosing and 5.2 PK checked; regulatory product information"
+  }
+]

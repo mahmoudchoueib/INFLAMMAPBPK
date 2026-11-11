@@ -1,0 +1,222 @@
+[
+  {
+    "key":"weight_kg",
+    "label":"Body weight",
+    "unit":"kg",
+    "default":70.0,
+    "minimum":40.0,
+    "maximum":150.0,
+    "source":"docs\/physiology.md",
+    "evidence":"hypothetical adult scaling range",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"dose_mg",
+    "label":"Absolute dose",
+    "unit":"mg",
+    "default":40.0,
+    "minimum":0.0,
+    "maximum":500.0,
+    "source":"EMA Humira 5.2 single-dose studies",
+    "evidence":"40 mg source-backed; exploration range assumed",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"dose_mg_kg",
+    "label":"Weight-normalised dose",
+    "unit":"mg\/kg",
+    "default":5.0,
+    "minimum":0.1,
+    "maximum":10.0,
+    "source":"User-defined research scenario",
+    "evidence":"assumed; not a prescribed regimen",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"interval_days",
+    "label":"Dose interval",
+    "unit":"day",
+    "default":14.0,
+    "minimum":1.0,
+    "maximum":56.0,
+    "source":"EMA Humira 4.2 maintenance interval",
+    "evidence":"14-day example; range not validated",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"dose_count",
+    "label":"Number of administrations",
+    "unit":"count",
+    "default":1.0,
+    "minimum":1.0,
+    "maximum":8.0,
+    "source":"Piecewise bolus implementation",
+    "evidence":"computational limit; integer",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"horizon_days",
+    "label":"Observation horizon",
+    "unit":"day",
+    "default":28.0,
+    "minimum":1.0,
+    "maximum":112.0,
+    "source":"Research scenario",
+    "evidence":"computational range",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"molecular_mass",
+    "label":"Molecular mass for dose conversion",
+    "unit":"g\/mol",
+    "default":150000.0,
+    "minimum":100000.0,
+    "maximum":200000.0,
+    "source":"Generic IgG assumption",
+    "evidence":"not a verified drug-specific mass",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"ka",
+    "label":"SC absorption rate",
+    "unit":"1\/h",
+    "default":0.01,
+    "minimum":0.001,
+    "maximum":0.05,
+    "source":"Chunk 2 exploratory fixture",
+    "evidence":"assumed; not fitted",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"bioavailability",
+    "label":"SC bioavailability",
+    "unit":"fraction",
+    "default":0.64,
+    "minimum":0.0,
+    "maximum":1.0,
+    "source":"EMA Humira 5.2, single 40 mg doses",
+    "evidence":"regulatory average; population transfer uncertain",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"permeability",
+    "label":"Regional PS multiplier",
+    "unit":"fold",
+    "default":1.0,
+    "minimum":0.5,
+    "maximum":4.0,
+    "source":"docs\/intestinal_disease_model.md",
+    "evidence":"hypothesis; no clinical-score mapping",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"flow",
+    "label":"Regional arterial-flow multiplier",
+    "unit":"fold",
+    "default":1.0,
+    "minimum":0.5,
+    "maximum":1.5,
+    "source":"docs\/intestinal_disease_model.md",
+    "evidence":"hypothesis; total cardiac flow changes",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"lymph",
+    "label":"Regional lymph-flow multiplier",
+    "unit":"fold",
+    "default":1.0,
+    "minimum":0.0,
+    "maximum":2.0,
+    "source":"docs\/intestinal_disease_model.md",
+    "evidence":"hypothesis; not measured IBD physiology",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"uptake",
+    "label":"Endosomal uptake rate",
+    "unit":"1\/h",
+    "default":0.001,
+    "minimum":0.0001,
+    "maximum":0.01,
+    "source":"docs\/fcrn_mechanism.md",
+    "evidence":"assumed",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"recycling",
+    "label":"FcRn-bound recycling rate",
+    "unit":"1\/h",
+    "default":0.2,
+    "minimum":0.0,
+    "maximum":1.0,
+    "source":"docs\/fcrn_mechanism.md",
+    "evidence":"assumed",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"degradation",
+    "label":"Unprotected endosomal degradation",
+    "unit":"1\/h",
+    "default":0.5,
+    "minimum":0.1,
+    "maximum":2.0,
+    "source":"docs\/fcrn_mechanism.md",
+    "evidence":"assumed",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"receptor",
+    "label":"FcRn sites per organ at 70 kg",
+    "unit":"nmol",
+    "default":1.0,
+    "minimum":0.0,
+    "maximum":10.0,
+    "source":"docs\/fcrn_mechanism.md",
+    "evidence":"assumed shared capacity; not human receptor data",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"endogenous_igg",
+    "label":"Endosomal endogenous IgG reservoir",
+    "unit":"nmol\/L",
+    "default":0.0,
+    "minimum":0.0,
+    "maximum":50000.0,
+    "source":"docs\/fcrn_mechanism.md",
+    "evidence":"assumed; zero disables competition",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"soluble_target",
+    "label":"Regional soluble target sites at 70 kg",
+    "unit":"nmol",
+    "default":0.0,
+    "minimum":0.0,
+    "maximum":2.0,
+    "source":"docs\/tmdd_mechanism.md",
+    "evidence":"assumed; zero disables target",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"membrane_target",
+    "label":"Regional membrane target sites at 70 kg",
+    "unit":"nmol",
+    "default":0.0,
+    "minimum":0.0,
+    "maximum":2.0,
+    "source":"docs\/tmdd_mechanism.md",
+    "evidence":"assumed; zero disables target",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  },
+  {
+    "key":"population_spread_kg",
+    "label":"Hypothetical weight spread",
+    "unit":"kg",
+    "default":10.0,
+    "minimum":0.0,
+    "maximum":30.0,
+    "source":"User-defined three-scenario grid",
+    "evidence":"not a population distribution or confidence interval",
+    "range_meaning":"exploration guardrails, not validated physiology"
+  }
+]

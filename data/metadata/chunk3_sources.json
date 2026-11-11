@@ -1,0 +1,66 @@
+[
+  {
+    "path": "data/raw/chunk3/atlas_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:25670812%20AND%20SRC:MED&format=json&resultType=core",
+    "sha256": "01958f3f121be152f9e67100ba4d99aa6b88d3021464e483a186d275998cacbc",
+    "bytes": 8514,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/yoshihara_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:28945638%20AND%20SRC:MED&format=json&resultType=core",
+    "sha256": "5c489ef285d32a893482d4f9ce597130ab4d4e033986a799641b8b35029e3020",
+    "bytes": 7365,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/calibration_population_article.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13675741/",
+    "sha256": "5b48ee5de8cda895385825c5af8b0deecc0aff65e63cd25e1e4016486e6c6b55",
+    "bytes": 205336,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/validation_M923_article.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5817835/",
+    "sha256": "9404031f25b24a2c0aa59a69cc41c526186d997f6427884124d725a92a341dd8",
+    "bytes": 207271,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/candidate_ABP501_article.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13140478/",
+    "sha256": "363ce0fa6bbe2b617fc7ecfe28f4f5e47434e10c1896881f8db522318d443557",
+    "bytes": 153576,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/candidate_early_ABP501_article.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5445997/",
+    "sha256": "bcd68da9706665e913dd29f7cc914e001de3c5182559c2a0a888e84c168131c9",
+    "bytes": 174171,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/taurus_metadata.json",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41590-024-01994-8&format=json&resultType=core",
+    "sha256": "b368bce1322e14cdbcf730be0e86185f7479c620f93d144f41d60e6882d55476",
+    "bytes": 24142,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  },
+  {
+    "path": "data/raw/chunk3/taurus_article.html",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11519010/",
+    "sha256": "f6d4e6705b8314ab33476d52a7daca7b657ec41d1d5f6610248e82e1c7fe5512",
+    "bytes": 357487,
+    "checked_date_utc": "2026-11-10",
+    "rights": "consult source licence; public access is not an individual-data grant"
+  }
+]

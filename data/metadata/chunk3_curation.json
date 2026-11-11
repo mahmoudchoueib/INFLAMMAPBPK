@@ -1,0 +1,228 @@
+{
+  "animal_rows": 174,
+  "animal_independent_human_validation_rows": 0,
+  "human_summary_rows": 5,
+  "human_concentration_time_rows": 0,
+  "usable_independent_tissue_rows": 0,
+  "independent_heldout_human_studies": 1,
+  "calibration_missingness": {
+    "drug": {
+      "missing": 0,
+      "total": 5
+    },
+    "route": {
+      "missing": 0,
+      "total": 5
+    },
+    "dose_mg": {
+      "missing": 0,
+      "total": 5
+    },
+    "administration_time_h": {
+      "missing": 0,
+      "total": 5
+    },
+    "disease": {
+      "missing": 0,
+      "total": 5
+    },
+    "body_weight_kg": {
+      "missing": 0,
+      "total": 5
+    },
+    "albumin_g_L": {
+      "missing": 3,
+      "total": 5
+    },
+    "inflammation_marker": {
+      "missing": 5,
+      "total": 5
+    },
+    "patient_id": {
+      "missing": 5,
+      "total": 5
+    },
+    "tissue_region": {
+      "missing": 0,
+      "total": 5
+    },
+    "measured_quantity": {
+      "missing": 0,
+      "total": 5
+    },
+    "observation_level": {
+      "missing": 0,
+      "total": 5
+    },
+    "immunogenicity": {
+      "missing": 0,
+      "total": 5
+    },
+    "study_id": {
+      "missing": 0,
+      "total": 5
+    },
+    "cohort_id": {
+      "missing": 0,
+      "total": 5
+    },
+    "role": {
+      "missing": 0,
+      "total": 5
+    },
+    "endpoint": {
+      "missing": 0,
+      "total": 5
+    },
+    "value": {
+      "missing": 0,
+      "total": 5
+    },
+    "unit": {
+      "missing": 0,
+      "total": 5
+    },
+    "reported_lower95": {
+      "missing": 2,
+      "total": 5
+    },
+    "reported_upper95": {
+      "missing": 2,
+      "total": 5
+    },
+    "n": {
+      "missing": 2,
+      "total": 5
+    },
+    "source": {
+      "missing": 0,
+      "total": 5
+    },
+    "sampling_time_h": {
+      "missing": 5,
+      "total": 5
+    },
+    "body_weight_summary_type": {
+      "missing": 0,
+      "total": 5
+    },
+    "albumin_summary_type": {
+      "missing": 3,
+      "total": 5
+    },
+    "covariate_use": {
+      "missing": 0,
+      "total": 5
+    }
+  },
+  "animal_missingness": {
+    "drug": {
+      "missing": 0,
+      "total": 174
+    },
+    "study_id": {
+      "missing": 0,
+      "total": 174
+    },
+    "cohort_id": {
+      "missing": 0,
+      "total": 174
+    },
+    "patient_id": {
+      "missing": 174,
+      "total": 174
+    },
+    "observation_level": {
+      "missing": 0,
+      "total": 174
+    },
+    "species": {
+      "missing": 0,
+      "total": 174
+    },
+    "dose": {
+      "missing": 0,
+      "total": 174
+    },
+    "dose_unit": {
+      "missing": 0,
+      "total": 174
+    },
+    "route": {
+      "missing": 0,
+      "total": 174
+    },
+    "administration_time_h": {
+      "missing": 0,
+      "total": 174
+    },
+    "sampling_time_h": {
+      "missing": 0,
+      "total": 174
+    },
+    "concentration": {
+      "missing": 0,
+      "total": 174
+    },
+    "concentration_unit": {
+      "missing": 0,
+      "total": 174
+    },
+    "disease": {
+      "missing": 0,
+      "total": 174
+    },
+    "body_weight_kg": {
+      "missing": 174,
+      "total": 174
+    },
+    "albumin_g_L": {
+      "missing": 174,
+      "total": 174
+    },
+    "inflammation_marker": {
+      "missing": 174,
+      "total": 174
+    },
+    "tissue_region": {
+      "missing": 0,
+      "total": 174
+    },
+    "tissue_sample_type": {
+      "missing": 0,
+      "total": 174
+    },
+    "immunogenicity": {
+      "missing": 174,
+      "total": 174
+    },
+    "profile": {
+      "missing": 0,
+      "total": 174
+    },
+    "source_sheet": {
+      "missing": 0,
+      "total": 174
+    },
+    "reported_sd": {
+      "missing": 0,
+      "total": 174
+    },
+    "measured_quantity": {
+      "missing": 0,
+      "total": 174
+    },
+    "role": {
+      "missing": 0,
+      "total": 174
+    }
+  },
+  "split_rule": "Entire trials separated; US/EU arms of same trial not separate studies; participant IDs unavailable",
+  "tissue_exclusions": {
+    "ATLAS_PMID25670812": "30 participants reported; abstract/metadata only; no individual dosing/assay-normalised observations retrieved",
+    "Yoshihara_PMID28945638": "25 participants reported; abstract/metadata only; no individual data retrieved",
+    "7E3": "Mouse radiolabelled tissue/model-development data; not free interstitium or independent human IBD validation"
+  },
+  "zero_sd_policy": "96 zeros retained as flags; not used as infinite weights; terminal fit uses estimated working log error",
+  "TAURUS": "No matrix acquired; no transcript-to-protein mapping attempted"
+}
