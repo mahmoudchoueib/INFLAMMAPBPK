@@ -1,7 +1,7 @@
 # InflammaPBPK
 
 An executable **exploratory** anti-TNF pharmacokinetic research platform with
-baseline, minimal and whole-body PBPK, numerical tests, a 15-page Streamlit
+baseline, minimal and whole-body PBPK, numerical tests, a 17-page Streamlit
 workspace, inference tools and reproducible scientific reports.
 
 **Scientific verdict:** disease-informed tissue prediction improvement is
@@ -49,6 +49,7 @@ make examples
 make figures
 make report
 make dashboard-smoke
+make audit-dashboard
 python -m inflammappbpk baseline --route sc --dose-nmol 100 --hours 336
 python -m inflammappbpk whole --output results/my_scenario
 ```
@@ -64,6 +65,8 @@ evidence-gap panel, not an invented validation plot.
 - `src/inflammappbpk/`: ODEs, transport, FcRn/TMDD, inference, observation models,
   validated scenario inputs and CLI.
 - `dashboard/app.py`: Streamlit/Plotly application with 15 evidence-aware sections.
+- The dashboard also includes a user guide, data readiness checks, and PNG graphs
+  that work without the interactive chart renderer. A reference graph loads automatically.
 - `configs/`: frozen analysis choices, source pins and control provenance.
 - `data/benchmarks/`: attributed public aggregate facts; no patient-level records.
 - `data/metadata/`: dataset/parameter registries and missingness/provenance.
@@ -77,6 +80,10 @@ See [installation](docs/installation.md), [architecture](docs/architecture.md),
 [mathematics](docs/mathematical_model.md), [inference methods](docs/inference_and_validation.md),
 [validation](docs/validation.md), [dashboard guide](docs/dashboard_guide.md),
 [manuscript](research/manuscript.md), and [current status](PROJECT_STATUS.md).
+
+The [dashboard audit](docs/dashboard_audit.md) records dataset availability, chart
+checks and verification limits. Open **User guide** or **Data and system status**
+inside the dashboard for usage instructions and the current local file checks.
 
 Whole-body geometry, most kinetics and disease modifiers are assumed. The UI's
 weight grid is not a fitted population distribution; its mouse Bayesian panel is

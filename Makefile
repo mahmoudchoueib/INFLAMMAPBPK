@@ -1,6 +1,6 @@
 .NOTPARALLEL:
 RUN = bash scripts/run_python.sh
-.PHONY: install data baseline whole analysis examples figures report check dashboard dashboard-smoke reproduce
+.PHONY: install data baseline whole analysis examples figures report check dashboard dashboard-smoke audit-dashboard reproduce
 install:
 	bash scripts/install.sh
 data:
@@ -26,4 +26,6 @@ dashboard:
 	bash scripts/run_dashboard.sh
 dashboard-smoke:
 	$(RUN) -m pytest -q tests/test_dashboard.py
+audit-dashboard:
+	$(RUN) scripts/audit_dashboard.py
 reproduce: data baseline whole report check
