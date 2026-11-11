@@ -1,5 +1,6 @@
 """Evidence-aware Streamlit research application. Launch from the repository root."""
 
+import hashlib
 import json
 from dataclasses import replace
 from pathlib import Path
@@ -16,6 +17,12 @@ from inflammappbpk.research_platform import (
     physiology_table,
     run_scenario,
 )
+from inflammappbpk.validation.readiness import (
+    artifact_inventory,
+    optional_inventory,
+    source_inventory,
+)
+from inflammappbpk.visualisation.static import chart_png
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [
@@ -34,6 +41,8 @@ PAGES = [
     "Model comparison",
     "Experimental validation",
     "Literature and parameter provenance",
+    "Data and system status",
+    "User guide",
 ]
 st.set_page_config(page_title="InflammaPBPK Research", layout="wide")
 st.title("InflammaPBPK")
@@ -44,7 +53,20 @@ st.warning(
         "exposure and infliximab transfer are unvalidated."
     )
 )
-page = st.sidebar.selectbox("Research page", PAGES, key="page")
+
+
+def navigate(destination):
+    st.session_state["page"] = destination
+
+
+page = st.sidebar.selectbox("Research page", PAGES, key="page", bind="query-params")
+st.sidebar.button("How to use this dashboard", on_click=navigate, args=("User guide",))
+chart_display = st.sidebar.radio(
+    "Chart display",
+    ["Static images", "Interactive"],
+    key="chart_display",
+    help="Static PNG graphs work without an interactive renderer. Interactive adds zoom and hover.",
+)
 
 
 def number(key):
@@ -88,6 +110,9 @@ biologic = st.sidebar.selectbox(
 
 with st.sidebar.form("simulation_form"):
     st.subheader("Exploratory configuration")
+    submitted = st.form_submit_button(
+        "Run exploratory simulation", key="run_simulation", type="primary", width="stretch"
+    )
     route = st.selectbox(
         "Route",
         ["iv"] if biologic == "infliximab" else ["sc", "iv"],
@@ -114,7 +139,7 @@ with st.sidebar.form("simulation_form"):
         help="Weight-normalised dose uses the entered body weight. This is not dose advice.",
     )
     fields = {}
-    with st.expander("Dose, weight and horizon", expanded=True):
+    with st.expander("Dose, weight and horizon"):
         for name in [
             "weight_kg",
             "dose_mg",
@@ -149,7 +174,6 @@ with st.sidebar.form("simulation_form"):
             "membrane_target",
         ]:
             fields[name] = number(name)
-    submitted = st.form_submit_button("Run exploratory simulation", key="run_simulation")
 if submitted:
     try:
         config = Scenario(
@@ -163,14 +187,24 @@ if submitted:
         )
         with st.spinner("Solving conservative ODEs…"):
             st.session_state["simulation"] = cached_simulation(config.payload())
+        st.session_state["reference_preview"] = False
         st.session_state["simulation_error"] = None
     except (ValueError, RuntimeError) as exc:
         st.session_state["simulation_error"] = str(exc)
+if "simulation" not in st.session_state:
+    with st.spinner("Loading the exploratory reference simulation…"):
+        st.session_state["simulation"] = cached_simulation(Scenario().payload())
+    st.session_state["reference_preview"] = True
 if st.session_state.get("simulation_error"):
     st.error(st.session_state["simulation_error"])
-result = st.session_state.get("simulation")
+result = st.session_state["simulation"]
 st.header(page)
 if result is not None:
+    if st.session_state.get("reference_preview"):
+        st.caption(
+            "Reference preview: 70 kg, adalimumab-labelled generic scaffold, "
+            "40 mg SC, 28 days. Edit the sidebar and select Run exploratory simulation to apply."
+        )
     st.caption(
         (
             "Displayed results use the last successful run. Apply "
@@ -199,16 +233,27 @@ def csv(path):
     target = ROOT / path
     if target.exists():
         return pd.read_csv(target)
-    st.info("Stored analysis artifact unavailable. Generate it with: make analysis")
+    st.info("Stored analysis unavailable. Open Data and system status for setup instructions.")
     return None
 
 
 def json_artifact(path):
     target = ROOT / path
     if target.exists():
-        return json.loads(target.read_text())
-    st.info("Stored analysis artifact unavailable. Generate it with: make analysis")
+        return json.loads(target.read_text(encoding="utf-8"))
+    st.info("Stored analysis unavailable. Open Data and system status for setup instructions.")
     return None
+
+
+def show_chart(figure, **_options):
+    title = figure.layout.title.text or "Exploratory chart"
+    if chart_display == "Interactive":
+        st.plotly_chart(figure, width="stretch", alt=title)
+    else:
+        payload = chart_png(figure)
+        st.image(payload, width="stretch", alt=title)
+        key = "chart_png_" + hashlib.sha256(title.encode()).hexdigest()[:16]
+        st.download_button("Download chart PNG", payload, key + ".png", "image/png", key=key)
 
 
 def plot(frame, columns, title, ylabel="Concentration (nmol/L)"):
@@ -219,7 +264,7 @@ def plot(frame, columns, title, ylabel="Concentration (nmol/L)"):
         title=title,
         labels={"time_day": "Time (days)", "value": ylabel, "variable": "Quantity"},
     )
-    st.plotly_chart(fig, width="stretch")
+    show_chart(fig)
 
 
 def live_required():
@@ -237,6 +282,12 @@ if page == "Project overview":
             "validation evidence."
         )
     )
+    st.info(
+        "Start here: a reference simulation is already loaded. Choose a research page in the "
+        "sidebar. To change the scenario, edit its controls and select Run exploratory simulation. "
+        "Use Chart display → Interactive for hover and zoom, or keep Static images for PNG graphs."
+    )
+    plot(result["curves"], ["plasma_nmol_L"], "Reference or last-run free venous plasma")
     gates = json_artifact("results/validation/evidence_gates.json")
     if gates:
         a, b, c = st.columns(3)
@@ -259,7 +310,7 @@ elif page == "Whole-body physiology":
     config = Scenario(**result["configuration"]) if result else Scenario()
     table = physiology_table(config)
     st.dataframe(table, width="stretch", hide_index=True)
-    st.plotly_chart(
+    show_chart(
         px.bar(
             table,
             x="organ",
@@ -346,7 +397,7 @@ elif page == "Intestinal inflammation model":
             "do not set them."
         )
     )
-    if live_required() and st.button("Compare transport hypothesis with reference transport"):
+    if live_required():
         config = Scenario(**result["configuration"])
         ref = replace(config, disease="reference", permeability=1.0, flow=1.0, lymph=1.0)
         other = cached_simulation(ref.payload())
@@ -407,7 +458,8 @@ elif page == "Target-mediated disposition":
             st.info(
                 (
                     "No target sites enabled; occupancy is undefined rather "
-                    "than zero evidence of engagement."
+                    "than zero evidence of engagement. Enable soluble or membrane target "
+                    "sites in FcRn and target hypotheses, then run the simulation."
                 )
             )
         st.caption(
@@ -457,17 +509,15 @@ elif page == "Population variability":
         )
     )
     spread = number("population_spread_kg")
-    if live_required() and st.button("Run hypothetical weight grid"):
+    if live_required():
         config = Scenario(**result["configuration"])
         weights = [config.weight_kg - spread, config.weight_kg, config.weight_kg + spread]
         if min(weights) < 40 or max(weights) > 150:
             st.error("Weight grid must stay within 40–150 kg exploration bounds.")
         else:
-            comparison = None
+            comparison = result["curves"][["time_day"]].copy()
             for weight in sorted(set(weights)):
                 run = cached_simulation(replace(config, weight_kg=weight).payload())
-                if comparison is None:
-                    comparison = run["curves"][["time_day"]].copy()
                 comparison[f"{weight:g} kg"] = run["curves"].plasma_nmol_L.to_numpy()
             plot(
                 comparison,
@@ -492,7 +542,7 @@ elif page == "Parameter sensitivity":
     if table is not None:
         metric = st.selectbox("Sensitivity endpoint", table.metric.unique())
         selected = table[table.metric == metric]
-        st.plotly_chart(
+        show_chart(
             px.bar(
                 selected,
                 x="parameter",
@@ -520,7 +570,7 @@ elif page == "Bayesian uncertainty":
             if path.exists():
                 with np.load(path) as draws:
                     half = np.log(2) / np.exp(draws["log_rate"])
-                st.plotly_chart(
+                show_chart(
                     px.histogram(
                         x=half,
                         labels={"x": "Mouse working terminal half-life (h)"},
@@ -530,7 +580,7 @@ elif page == "Bayesian uncertainty":
                 )
             ppc = csv("results/bayesian/posterior_predictive.csv")
             if ppc is not None:
-                st.plotly_chart(
+                show_chart(
                     px.scatter(
                         ppc,
                         x="time_h",
@@ -557,7 +607,7 @@ elif page == "Model comparison":
     if table is not None:
         truth = st.selectbox("Synthetic generating model", table.truth.unique())
         st.dataframe(table[table.truth == truth], hide_index=True, width="stretch")
-        st.plotly_chart(
+        show_chart(
             px.bar(
                 table[table.truth == truth],
                 x="model",
@@ -573,7 +623,7 @@ elif page == "Experimental validation":
     table = csv("results/validation/human_summary_validation.csv")
     if table is not None:
         st.dataframe(table, hide_index=True, width="stretch")
-        st.plotly_chart(
+        show_chart(
             px.bar(
                 table,
                 x="endpoint",
@@ -594,7 +644,7 @@ elif page == "Literature and parameter provenance":
     tabs = st.tabs(["Controls", "Model parameters", "Datasets", "Literature"])
     with tabs[0]:
         st.dataframe(parameter_table(), hide_index=True, width="stretch")
-    for tab, path in zip(
+    for tab, table_path in zip(
         tabs[1:],
         [
             "data/metadata/parameter_registry.csv",
@@ -603,9 +653,56 @@ elif page == "Literature and parameter provenance":
         ],
     ):
         with tab:
-            table = csv(path)
+            table = csv(table_path)
             if table is not None:
+                if table_path == "data/metadata/dataset_registry.csv":
+                    table.insert(
+                        1,
+                        "local_status",
+                        table.local_path.map(
+                            lambda name: "Present" if (ROOT / name).is_file() else "Not downloaded"
+                        ),
+                    )
                 st.dataframe(table, hide_index=True, width="stretch")
+elif page == "Data and system status":
+    sources = source_inventory(ROOT)
+    artifacts = artifact_inventory(ROOT)
+    required_ok = sources.status.eq("Verified").all()
+    artifacts_ok = artifacts.status.eq("Ready").all()
+    if required_ok and artifacts_ok:
+        st.success("All required benchmark sources and stored dashboard analyses are ready.")
+    else:
+        st.warning("Some sources or stored analyses need attention; live simulations still work.")
+    st.subheader("Required benchmark sources")
+    st.dataframe(sources, hide_index=True, width="stretch")
+    st.caption(
+        "Mouse 7E3 benchmark: 174 aggregate observations across 24 profiles. "
+        "Human benchmark: five published aggregate endpoints across two trials. "
+        "These files contain no patient-level records or independent human tissue observations."
+    )
+    st.subheader("Stored chart data")
+    st.dataframe(artifacts, hide_index=True, width="stretch")
+    st.subheader("Optional sources and historical retrieval records")
+    st.dataframe(optional_inventory(ROOT), hide_index=True, width="stretch")
+    st.caption(
+        "Local status is checked now. A historical retrieval flag does not mean a file is in "
+        "this checkout. Missing optional papers, atlases and candidate datasets do not block "
+        "the supported benchmark. TAURUS matrices and human tissue data remain unavailable."
+    )
+    with st.expander("Restore missing reference analyses"):
+        st.markdown(
+            "In WSL2 Ubuntu, from the repository directory, run the commands below. "
+            "They retrieve the pinned public benchmark and regenerate the stored analysis."
+        )
+        st.code("bash scripts/install.sh\nmake reproduce", language="bash")
+elif page == "User guide":
+    st.markdown((ROOT / "docs/dashboard_guide.md").read_text(encoding="utf-8"))
+    st.download_button(
+        "Download the user guide",
+        (ROOT / "docs/dashboard_guide.md").read_bytes(),
+        "InflammaPBPK-user-guide.md",
+        "text/markdown",
+    )
 
 with st.expander("Control provenance and exploration bounds"):
     st.dataframe(parameter_table(), hide_index=True, width="stretch")
