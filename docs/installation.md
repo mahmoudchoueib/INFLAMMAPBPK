@@ -44,6 +44,7 @@ the dashboard directly on Windows, install Python 3.12 and run the following fro
 the repository directory:
 
 ```powershell
+$env:PYTHONUTF8 = "1"
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m ensurepip --upgrade
 .\.venv\Scripts\python.exe -m pip install --no-cache-dir -r requirements.txt
