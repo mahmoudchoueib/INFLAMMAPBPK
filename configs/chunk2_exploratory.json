@@ -1,0 +1,165 @@
+{
+  "classification": "UNCALIBRATED EXPLORATORY; NOT VALIDATED",
+  "units": {
+    "amount": "nmol",
+    "volume": "L",
+    "time": "h"
+  },
+  "organs": [
+    {
+      "name": "lung",
+      "flow": 0,
+      "vascular": 0.25,
+      "interstitial": 0.3,
+      "lymph": 0.0,
+      "ps": 0.0009,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "liver",
+      "flow": 12,
+      "vascular": 0.25,
+      "interstitial": 0.4,
+      "lymph": 0.012,
+      "ps": 0.0012000000000000001,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "kidney",
+      "flow": 36,
+      "vascular": 0.15,
+      "interstitial": 0.2,
+      "lymph": 0.036000000000000004,
+      "ps": 0.0006000000000000001,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "spleen",
+      "flow": 6,
+      "vascular": 0.08,
+      "interstitial": 0.1,
+      "lymph": 0.006,
+      "ps": 0.00030000000000000003,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "muscle",
+      "flow": 42,
+      "vascular": 0.5,
+      "interstitial": 4,
+      "lymph": 0.042,
+      "ps": 0.012,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "skin",
+      "flow": 12,
+      "vascular": 0.2,
+      "interstitial": 2,
+      "lymph": 0.012,
+      "ps": 0.006,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "adipose",
+      "flow": 10,
+      "vascular": 0.12,
+      "interstitial": 1.5,
+      "lymph": 0.01,
+      "ps": 0.0045000000000000005,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "small_intestine",
+      "flow": 20,
+      "vascular": 0.18,
+      "interstitial": 0.6,
+      "lymph": 0.02,
+      "ps": 0.0018,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "colon",
+      "flow": 8,
+      "vascular": 0.08,
+      "interstitial": 0.4,
+      "lymph": 0.008,
+      "ps": 0.0012000000000000001,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    },
+    {
+      "name": "remaining",
+      "flow": 64,
+      "vascular": 0.49,
+      "interstitial": 2.5,
+      "lymph": 0.064,
+      "ps": 0.0075,
+      "reflection": 0.95,
+      "large_fraction": 0.1,
+      "large_reflection": 0.2,
+      "endosomal": 0.002
+    }
+  ],
+  "central_volumes_L": {
+    "arterial": 0.3,
+    "venous": 0.4,
+    "lymph": 0.1
+  },
+  "molecular_mass_g_mol": 150000,
+  "ka_per_h": 0.01,
+  "bioavailability": 0.64,
+  "baseline_reference_clearance_L_h": 0.013,
+  "doses": [
+    {
+      "time": 0,
+      "amount": 533.3333333333333,
+      "route": "sc"
+    },
+    {
+      "time": 336,
+      "amount": 266.66666666666663,
+      "route": "sc"
+    },
+    {
+      "time": 672,
+      "amount": 266.66666666666663,
+      "route": "sc"
+    },
+    {
+      "time": 1008,
+      "amount": 266.66666666666663,
+      "route": "sc"
+    }
+  ],
+  "sources": {
+    "doses_and_F": "EMA Humira sections 4.2 and 5.2; F from single-dose studies",
+    "geometry_and_kinetics": "Illustrative assumptions; uncalibrated"
+  }
+}

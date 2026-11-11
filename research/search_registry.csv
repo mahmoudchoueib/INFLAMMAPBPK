@@ -1,0 +1,13 @@
+search_id,query,status,total_hits,returned_records,screened,result_path
+S01,"(""whole body"" OR ""whole-body"" OR minimal) AND (PBPK OR ""physiologically based"") AND (antibody OR antibodies)",connection_error,,0,no,data/raw/searches/S01.json
+S02,(FcRn OR endosomal) AND (PBPK OR pharmacokinetic) AND (recycling OR trafficking),connection_error,,0,no,data/raw/searches/S02.json
+S03,"(""two pore"" OR ""two-pore"") AND (antibody OR antibodies)",connection_error,,0,no,data/raw/searches/S03.json
+S04,adalimumab AND (pharmacokinetic OR bioavailability OR intravenous) AND (bowel OR Crohn OR colitis),connection_error,,0,no,data/raw/searches/S04.json
+S05,infliximab AND (pharmacokinetic OR tissue OR biopsy) AND (bowel OR Crohn OR colitis),connection_error,,0,no,data/raw/searches/S05.json
+S06,"(adalimumab OR infliximab OR ""anti-TNF"") AND (tissue OR mucosal OR biopsy) AND concentration",connection_error,,0,no,data/raw/searches/S06.json
+S07,"(bowel OR intestinal OR Crohn OR colitis) AND (""vascular permeability"" OR ""lymph flow"" OR ""interstitial volume"")",connection_error,,0,no,data/raw/searches/S07.json
+S08,"(TNF OR ""tumor necrosis factor"") AND (turnover OR ""binding kinetics"" OR ""target mediated"") AND (adalimumab OR infliximab)",connection_error,,0,no,data/raw/searches/S08.json
+S09,(single-cell OR transcriptomics OR TAURUS) AND (Crohn OR colitis OR intestinal) AND (TNF OR FCGRT OR inflammation),connection_error,,0,no,data/raw/searches/S09.json
+S10,"(Bayesian OR ""machine learning"" OR hybrid) AND PBPK AND (antibody OR antibodies)",connection_error,,0,no,data/raw/searches/S10.json
+S11,"(PBPK OR ""physiologically based"") AND (adalimumab OR infliximab OR ""anti-TNF"") AND (intestinal OR bowel OR tissue)",connection_error,,0,no,data/raw/searches/S11.json
+S12,"(PBPK OR ""physiologically based"") AND (antibody OR adalimumab OR infliximab) AND FIRST_PDATE:[2024-01-01 TO 2026-11-10]",connection_error,,0,no,data/raw/searches/S12.json

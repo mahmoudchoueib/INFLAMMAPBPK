@@ -1,0 +1,23 @@
+[
+  {
+    "id": "OSP_7E3_SNAPSHOT",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/7E3-Model/12f886989585472e26d5857364047ff2d68abbcd/7E3.json",
+    "local_path": "data/raw/osp/source_7E3.json",
+    "sha256": "8f6730c526790aeabf83706bfadc54a38b78ef0e950277cb873861def322a1f6",
+    "max_bytes": 500000
+  },
+  {
+    "id": "OSP_7E3_SOURCE_README",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/7E3-Model/12f886989585472e26d5857364047ff2d68abbcd/README.md",
+    "local_path": "data/raw/osp/source_README.md",
+    "sha256": "40b64795358046e5c1cc868878c3d22ddff32f9b7682d10b70abfa3ceda889f5",
+    "max_bytes": 500000
+  },
+  {
+    "id": "human_aggregate_facts",
+    "local_path": "data/benchmarks/human_summary_endpoints.csv",
+    "sha256": "80ca01029060ef67976a98f88cb5b276debf4ea67801b1ca1ef716d5e71af75f",
+    "provenance": "Manually verified published aggregate NCA facts; citations and source table locators in CSV; no patient-level records",
+    "licence_note": "Source articles and rights metadata should be consulted; numbers are attributed published factual summaries"
+  }
+]

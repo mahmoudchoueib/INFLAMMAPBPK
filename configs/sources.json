@@ -1,0 +1,361 @@
+[
+  {
+    "id": "R01",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1007%2Fs10928-011-9232-2&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R01.json",
+    "kind": "literature",
+    "description": "Shah and Betts (2012), platform PBPK",
+    "identifier": "DOI:10.1007/s10928-011-9232-2"
+  },
+  {
+    "id": "R02",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID%3APMC3836053&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R02.json",
+    "kind": "literature",
+    "description": "Minimal PBPK",
+    "identifier": "PMCID:PMC3836053"
+  },
+  {
+    "id": "R03",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID%3APMC4147043&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R03.json",
+    "kind": "literature",
+    "description": "Antibody PBPK and FcRn",
+    "identifier": "PMCID:PMC4147043"
+  },
+  {
+    "id": "R04",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID%3APMC6813168&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R04.json",
+    "kind": "literature",
+    "description": "Mechanistic FcRn modelling",
+    "identifier": "PMCID:PMC6813168"
+  },
+  {
+    "id": "R05",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A31028591+AND+SRC%3AMED&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R05.json",
+    "kind": "literature",
+    "description": "Two-pore transport",
+    "identifier": "EXT_ID:31028591 AND SRC:MED"
+  },
+  {
+    "id": "R06",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A37952005+AND+SRC%3AMED&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R06.json",
+    "kind": "literature",
+    "description": "PBPK platform comparison",
+    "identifier": "EXT_ID:37952005 AND SRC:MED"
+  },
+  {
+    "id": "R07",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A25670812+AND+SRC%3AMED&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R07.json",
+    "kind": "literature",
+    "description": "ATLAS intestinal anti-TNF tissue study",
+    "identifier": "EXT_ID:25670812 AND SRC:MED"
+  },
+  {
+    "id": "R08",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A28945638+AND+SRC%3AMED&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R08.json",
+    "kind": "literature",
+    "description": "Additional tissue anti-TNF study",
+    "identifier": "EXT_ID:28945638 AND SRC:MED"
+  },
+  {
+    "id": "R09",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1038%2Fs41590-024-01994-8&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R09.json",
+    "kind": "literature",
+    "description": "TAURUS single-cell intestinal study",
+    "identifier": "DOI:10.1038/s41590-024-01994-8"
+  },
+  {
+    "id": "R10",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1007%2Fs13318-026-01049-3&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R10.json",
+    "kind": "literature",
+    "description": "Population PK",
+    "identifier": "DOI:10.1007/s13318-026-01049-3"
+  },
+  {
+    "id": "R11",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=PMCID%3APMC13416018&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/literature/R11.json",
+    "kind": "literature",
+    "description": "Population PK external evaluation",
+    "identifier": "PMCID:PMC13416018"
+  },
+  {
+    "id": "S01",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22whole+body%22+OR+%22whole-body%22+OR+minimal%29+AND+%28PBPK+OR+%22physiologically+based%22%29+AND+%28antibody+OR+antibodies%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S01.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(\"whole body\" OR \"whole-body\" OR minimal) AND (PBPK OR \"physiologically based\") AND (antibody OR antibodies)"
+  },
+  {
+    "id": "S02",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28FcRn+OR+endosomal%29+AND+%28PBPK+OR+pharmacokinetic%29+AND+%28recycling+OR+trafficking%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S02.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(FcRn OR endosomal) AND (PBPK OR pharmacokinetic) AND (recycling OR trafficking)"
+  },
+  {
+    "id": "S03",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22two+pore%22+OR+%22two-pore%22%29+AND+%28antibody+OR+antibodies%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S03.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(\"two pore\" OR \"two-pore\") AND (antibody OR antibodies)"
+  },
+  {
+    "id": "S04",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=adalimumab+AND+%28pharmacokinetic+OR+bioavailability+OR+intravenous%29+AND+%28bowel+OR+Crohn+OR+colitis%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S04.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "adalimumab AND (pharmacokinetic OR bioavailability OR intravenous) AND (bowel OR Crohn OR colitis)"
+  },
+  {
+    "id": "S05",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=infliximab+AND+%28pharmacokinetic+OR+tissue+OR+biopsy%29+AND+%28bowel+OR+Crohn+OR+colitis%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S05.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "infliximab AND (pharmacokinetic OR tissue OR biopsy) AND (bowel OR Crohn OR colitis)"
+  },
+  {
+    "id": "S06",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28adalimumab+OR+infliximab+OR+%22anti-TNF%22%29+AND+%28tissue+OR+mucosal+OR+biopsy%29+AND+concentration&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S06.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(adalimumab OR infliximab OR \"anti-TNF\") AND (tissue OR mucosal OR biopsy) AND concentration"
+  },
+  {
+    "id": "S07",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28bowel+OR+intestinal+OR+Crohn+OR+colitis%29+AND+%28%22vascular+permeability%22+OR+%22lymph+flow%22+OR+%22interstitial+volume%22%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S07.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(bowel OR intestinal OR Crohn OR colitis) AND (\"vascular permeability\" OR \"lymph flow\" OR \"interstitial volume\")"
+  },
+  {
+    "id": "S08",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28TNF+OR+%22tumor+necrosis+factor%22%29+AND+%28turnover+OR+%22binding+kinetics%22+OR+%22target+mediated%22%29+AND+%28adalimumab+OR+infliximab%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S08.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(TNF OR \"tumor necrosis factor\") AND (turnover OR \"binding kinetics\" OR \"target mediated\") AND (adalimumab OR infliximab)"
+  },
+  {
+    "id": "S09",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28single-cell+OR+transcriptomics+OR+TAURUS%29+AND+%28Crohn+OR+colitis+OR+intestinal%29+AND+%28TNF+OR+FCGRT+OR+inflammation%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S09.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(single-cell OR transcriptomics OR TAURUS) AND (Crohn OR colitis OR intestinal) AND (TNF OR FCGRT OR inflammation)"
+  },
+  {
+    "id": "S10",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28Bayesian+OR+%22machine+learning%22+OR+hybrid%29+AND+PBPK+AND+%28antibody+OR+antibodies%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S10.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(Bayesian OR \"machine learning\" OR hybrid) AND PBPK AND (antibody OR antibodies)"
+  },
+  {
+    "id": "S11",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28PBPK+OR+%22physiologically+based%22%29+AND+%28adalimumab+OR+infliximab+OR+%22anti-TNF%22%29+AND+%28intestinal+OR+bowel+OR+tissue%29&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S11.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(PBPK OR \"physiologically based\") AND (adalimumab OR infliximab OR \"anti-TNF\") AND (intestinal OR bowel OR tissue)"
+  },
+  {
+    "id": "S12",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28PBPK+OR+%22physiologically+based%22%29+AND+%28antibody+OR+adalimumab+OR+infliximab%29+AND+FIRST_PDATE%3A%5B2024-01-01+TO+2026-11-10%5D&format=json&resultType=core&pageSize=100",
+    "local_path": "data/raw/searches/S12.json",
+    "kind": "search",
+    "description": "Prospective screening query",
+    "query": "(PBPK OR \"physiologically based\") AND (antibody OR adalimumab OR infliximab) AND FIRST_PDATE:[2024-01-01 TO 2026-11-10]"
+  },
+  {
+    "id": "FT_PMC3836053",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3836053/fullTextXML",
+    "local_path": "data/raw/literature/PMC3836053.xml",
+    "kind": "fulltext",
+    "description": "OA full-text endpoint; licence must be inspected"
+  },
+  {
+    "id": "FT_PMC4147043",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4147043/fullTextXML",
+    "local_path": "data/raw/literature/PMC4147043.xml",
+    "kind": "fulltext",
+    "description": "OA full-text endpoint; licence must be inspected"
+  },
+  {
+    "id": "FT_PMC6813168",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6813168/fullTextXML",
+    "local_path": "data/raw/literature/PMC6813168.xml",
+    "kind": "fulltext",
+    "description": "OA full-text endpoint; licence must be inspected"
+  },
+  {
+    "id": "FT_PMC13416018",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13416018/fullTextXML",
+    "local_path": "data/raw/literature/PMC13416018.xml",
+    "kind": "fulltext",
+    "description": "OA full-text endpoint; licence must be inspected"
+  },
+  {
+    "id": "CT_ADA",
+    "url": "https://clinicaltrials.gov/api/v2/studies?query.intr=adalimumab&query.cond=inflammatory+bowel+disease&pageSize=5&format=json",
+    "local_path": "data/raw/public/clinicaltrials_adalimumab.json",
+    "kind": "public_data",
+    "description": "Registry records; not patient-level PK"
+  },
+  {
+    "id": "EMA_ADA",
+    "url": "https://www.ema.europa.eu/en/documents/product-information/humira-epar-product-information_en.pdf",
+    "local_path": "data/raw/public/humira_epar.pdf",
+    "kind": "public_data",
+    "description": "Regulatory product information; aggregate PK"
+  },
+  {
+    "id": "EMA_IFX",
+    "url": "https://www.ema.europa.eu/en/documents/product-information/remicade-epar-product-information_en.pdf",
+    "local_path": "data/raw/public/remicade_epar.pdf",
+    "kind": "public_data",
+    "description": "Regulatory product information; aggregate PK"
+  },
+  {
+    "id": "FDA_ADA",
+    "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=125057",
+    "local_path": "data/raw/public/fda_humira.html",
+    "kind": "public_data",
+    "description": "Application landing page; inspect label links"
+  },
+  {
+    "id": "CHEMBL_ADA",
+    "url": "https://www.ebi.ac.uk/chembl/api/data/molecule.json?pref_name__iexact=ADALIMUMAB",
+    "local_path": "data/raw/public/chembl_adalimumab.json",
+    "kind": "public_data",
+    "description": "Molecule metadata; not assumed kinetic data"
+  },
+  {
+    "id": "UNIPROT_TNF",
+    "url": "https://rest.uniprot.org/uniprotkb/P01375.json",
+    "local_path": "data/raw/public/uniprot_tnf.json",
+    "kind": "public_data",
+    "description": "Human TNF sequence and annotation"
+  },
+  {
+    "id": "UNIPROT_FCGRT",
+    "url": "https://rest.uniprot.org/uniprotkb/P55899.json",
+    "local_path": "data/raw/public/uniprot_fcgrt.json",
+    "kind": "public_data",
+    "description": "Human FcRn heavy-chain annotation"
+  },
+  {
+    "id": "HPA_TNF",
+    "url": "https://www.proteinatlas.org/ENSG00000232810-TNF",
+    "local_path": "data/raw/public/hpa_tnf.html",
+    "kind": "public_data",
+    "description": "Expression landing page; abundance is not a turnover rate"
+  },
+  {
+    "id": "HPA_FCGRT",
+    "url": "https://www.proteinatlas.org/ENSG00000104870-FCGRT",
+    "local_path": "data/raw/public/hpa_fcgrt.html",
+    "kind": "public_data",
+    "description": "Expression landing page; expression is not functional recycling"
+  },
+  {
+    "id": "GEO_TAURUS",
+    "url": "https://www.ncbi.nlm.nih.gov/geo/?term=TAURUS%20intestinal",
+    "local_path": "data/raw/public/geo_taurus.html",
+    "kind": "public_data",
+    "description": "Discover processed accession after verifying study identity"
+  },
+  {
+    "id": "ATLAS_TAURUS",
+    "url": "https://www.ebi.ac.uk/gxa/sc/search?query=TAURUS",
+    "local_path": "data/raw/public/atlas_taurus.html",
+    "kind": "public_data",
+    "description": "Discover processed matrices and metadata; no raw sequencing download"
+  },
+  {
+    "id": "TAURUS",
+    "url": "https://www.nature.com/articles/s41590-024-01994-8",
+    "local_path": "data/raw/public/taurus_article.html",
+    "kind": "public_data",
+    "description": "Study identity, data-availability statement and supplements"
+  },
+  {
+    "id": "RCSB_CANDIDATE",
+    "url": "https://data.rcsb.org/rest/v1/core/entry/3WD5",
+    "local_path": "data/raw/public/rcsb_3wd5.json",
+    "kind": "public_data",
+    "description": "Candidate adalimumab-TNF structure; verify identity before use"
+  },
+  {
+    "id": "OSP_7E3_evaluation_report_md",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/07a71b3e025879db5cc46feca1d262cc786ed0f6/7E3/7E3_evaluation_report.md",
+    "local_path": "data/raw/osp/7E3_evaluation_report.md",
+    "kind": "github",
+    "description": "Pinned OSP antibody comparator; not anti-TNF observations",
+    "max_bytes": 3000000
+  },
+  {
+    "id": "OSP_7E3_pksim5",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/07a71b3e025879db5cc46feca1d262cc786ed0f6/7E3/7E3.pksim5",
+    "local_path": "data/raw/osp/7E3.pksim5",
+    "kind": "github",
+    "description": "Pinned OSP antibody comparator; not anti-TNF observations",
+    "max_bytes": 3000000
+  },
+  {
+    "id": "OSP_MEDI524_evaluation_report_md",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/07a71b3e025879db5cc46feca1d262cc786ed0f6/MEDI524/MEDI524_evaluation_report.md",
+    "local_path": "data/raw/osp/MEDI524_evaluation_report.md",
+    "kind": "github",
+    "description": "Pinned OSP antibody comparator; not anti-TNF observations",
+    "max_bytes": 3000000
+  },
+  {
+    "id": "OSP_MEDI524_pksim5",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/OSP-PBPK-Model-Library/07a71b3e025879db5cc46feca1d262cc786ed0f6/MEDI524/MEDI524.pksim5",
+    "local_path": "data/raw/osp/MEDI524.pksim5",
+    "kind": "github",
+    "description": "Pinned OSP antibody comparator; not anti-TNF observations",
+    "max_bytes": 3000000
+  },
+  {
+    "id": "OSP_7E3_SOURCE_README",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/7E3-Model/12f886989585472e26d5857364047ff2d68abbcd/README.md",
+    "local_path": "data/raw/osp/source_README.md",
+    "kind": "github",
+    "description": "7E3 source model; GPLv2 as stated in its README; not anti-TNF",
+    "max_bytes": 500000
+  },
+  {
+    "id": "OSP_7E3_SNAPSHOT",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/7E3-Model/12f886989585472e26d5857364047ff2d68abbcd/7E3.json",
+    "local_path": "data/raw/osp/source_7E3.json",
+    "kind": "github",
+    "description": "7E3 source model; GPLv2 as stated in its README; not anti-TNF",
+    "max_bytes": 500000
+  },
+  {
+    "id": "OSP_7E3_PLAN",
+    "url": "https://raw.githubusercontent.com/Open-Systems-Pharmacology/7E3-Model/12f886989585472e26d5857364047ff2d68abbcd/Evaluation/Input/evaluation_plan.json",
+    "local_path": "data/raw/osp/source_evaluation_plan.json",
+    "kind": "github",
+    "description": "7E3 source model; GPLv2 as stated in its README; not anti-TNF",
+    "max_bytes": 500000
+  }
+]
